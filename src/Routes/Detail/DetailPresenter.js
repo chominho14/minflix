@@ -4,14 +4,13 @@ import ProTypes from "prop-types";
 import styled from "styled-components";
 
 
-const HomePresenter = ({nowPlaying, popular,upcoming,loading,error}) => null;
 
-HomePresenter.prototype = {
-    nowPlaying : ProTypes.array,
-    popular : ProTypes.array,
-    upcoming : ProTypes.array,
+const DetailPresenter = ({result,loading,error}) => null;
+
+DetailPresenter.prototype = {
+    result : ProTypes.object,
     loadin : ProTypes.bool.isrequired,
     error : ProTypes.string
 };
 
-export default HomePresenter;
+export default DetailPresenter;
