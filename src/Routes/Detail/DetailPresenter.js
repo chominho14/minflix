@@ -111,7 +111,7 @@ const DetailPresenter = ({ result, loading, error }) =>
                 )}
             </Item>
           </ItemContainer>
-          <Overview>{result.Overview}</Overview>
+          <Overview>{result.overview}</Overview>
         </Data>
       </Content>
     </Container>
