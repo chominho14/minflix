@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,10 +11,21 @@ import TV from "Routes/TV";
 import Search from "Routes/Search";
 import Detail from "Routes/Detail";
 import Auth from "Routes/Auth";
+import Profile from "Routes/Profile";
+import { authService } from "fBase";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    authService.onAuthStateChanged((user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+  }, []);
   return (
     <Router>
       {isLoggedIn ? (
@@ -26,13 +37,17 @@ export default () => {
             <Route path="/search" component={Search} />
             <Route path="/movie/:id" component={Detail} />
             <Route path="/show/:id" component={Detail} />
+            <Route path="/profile" component={Profile} />
             <Redirect from="*" to="/home" />
           </Switch>
         </>
       ) : (
-        <Route exact path="/">
-          <Auth />
-        </Route>
+        <>
+          <Route exact path="/">
+            <Auth />
+          </Route>
+          <Redirect from="*" to="/" />
+        </>
       )}
     </Router>
   );

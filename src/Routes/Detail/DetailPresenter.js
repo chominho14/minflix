@@ -69,6 +69,8 @@ const Overview = styled.p`
   width: 50%;
 `;
 
+const Comment = styled.div``;
+
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
     <Loader />
@@ -112,6 +114,16 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <Comment>
+            <form>
+              <input
+                type="text"
+                placeholder="What's on your mind?"
+                maxLength={120}
+              />
+              <input type="submit" value="Comment" />
+            </form>
+          </Comment>
         </Data>
       </Content>
     </Container>
