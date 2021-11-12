@@ -1,8 +1,8 @@
-// eslint-disable-next-line import/no-anonymous-default-export
 import React from "react";
 import ProTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "Components/Loader";
+import CommentPresenter from "Routes/Detail/CommentPresenter";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -71,7 +71,7 @@ const Overview = styled.p`
 
 const Comment = styled.div``;
 
-const DetailPresenter = ({ result, loading, error }) =>
+const DetailPresenter = ({ result, loading, error, userObj }) =>
   loading ? (
     <Loader />
   ) : (
@@ -115,14 +115,7 @@ const DetailPresenter = ({ result, loading, error }) =>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
           <Comment>
-            <form>
-              <input
-                type="text"
-                placeholder="What's on your mind?"
-                maxLength={120}
-              />
-              <input type="submit" value="Comment" />
-            </form>
+            <CommentPresenter />
           </Comment>
         </Data>
       </Content>
@@ -131,7 +124,7 @@ const DetailPresenter = ({ result, loading, error }) =>
 
 DetailPresenter.prototype = {
   result: ProTypes.object,
-  loadin: ProTypes.bool.isrequired,
+  loading: ProTypes.bool.isrequired,
   error: ProTypes.string,
 };
 

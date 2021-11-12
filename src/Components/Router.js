@@ -27,7 +27,7 @@ export default () => {
     });
   }, []);
   return (
-    <Router>
+    <Router isLoggedIn={isLoggedIn}>
       {isLoggedIn ? (
         <>
           <Header />
