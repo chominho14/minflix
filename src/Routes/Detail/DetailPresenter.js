@@ -69,9 +69,26 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const Comment = styled.div``;
+const Comment = styled.div`
+  margin-bottom: 20px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0, 1);
+  margin-top: 15px;
+`;
 
-const DetailPresenter = ({ result, loading, error, userObj }) =>
+const CommentTitle = styled.div`
+  font-size: 18px;
+`;
+
+const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
     <Loader />
   ) : (
@@ -115,6 +132,7 @@ const DetailPresenter = ({ result, loading, error, userObj }) =>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
           <Comment>
+            <CommentTitle>Comment</CommentTitle>
             <CommentPresenter />
           </Comment>
         </Data>

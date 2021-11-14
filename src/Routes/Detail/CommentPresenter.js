@@ -38,7 +38,7 @@ const CommentPresenter = () => {
           placeholder="What's on your mind?"
           maxLength={120}
         />
-        <input type="submit" value="Comment" />
+        <input type="submit" value="&rarr;" />
       </form>
       <div>
         {comments.map((comment) => (
