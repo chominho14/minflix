@@ -4,10 +4,15 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const LogoutBtn = styled.button`
-  background-color: white;
-  color: black;
-  width: 120px;
-  height: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 0px;
+  font-size: 12px;
+  text-align: center;
+  width: 150px;
+  background: white;
+  margin-top: 20px;
 `;
 
 const Profile = () => {

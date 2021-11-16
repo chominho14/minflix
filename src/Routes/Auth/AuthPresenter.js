@@ -22,7 +22,7 @@ const Container = styled.form`
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  margin-left: 38%;
+  margin-left: 42%;
 `;
 
 const AuthInput = styled.input`
@@ -69,6 +69,8 @@ const AuthSwitch = styled.span`
   font-size: 12px;
   text-decoration: underline;
   text-align: center;
+  width: 100px;
+  margin-left: 48%;
 `;
 
 const AuthBtns = styled.div`
@@ -76,7 +78,7 @@ const AuthBtns = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 320px;
-  margin-left: 38%;
+  margin-left: 42%;
 `;
 
 const AuthBtn = styled.button`
@@ -91,12 +93,10 @@ const AuthBtn = styled.button`
 `;
 
 const AuthLogo = styled.div`
-  width: 100%;
   height: 50px;
-  margin-left: 5px;
+  margin-left: 46%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 `;
