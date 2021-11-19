@@ -3,6 +3,7 @@ import ProTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "Components/Loader";
 import CommentPresenter from "Routes/Detail/CommentPresenter";
+import LikeAndDislikePresenter from "Routes/Detail/LikeAndDislikePresenter";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -104,7 +105,9 @@ const DetailPresenter = ({ result, loading, error }) =>
               : require("../../assets/noPosterSmall.PNG")
           }
         />
+
         <Data>
+          <LikeAndDislikePresenter />
           <Title>
             {result.original_title
               ? result.original_title

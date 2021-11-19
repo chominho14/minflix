@@ -94,7 +94,7 @@ const AuthBtn = styled.button`
 
 const AuthLogo = styled.div`
   height: 50px;
-  margin-left: 46%;
+  margin-left: 47%;
   display: flex;
   flex-direction: row;
   align-items: center;
