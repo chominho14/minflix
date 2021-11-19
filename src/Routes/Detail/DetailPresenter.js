@@ -44,7 +44,7 @@ const Backdrop = styled.div`
 `;
 
 const Data = styled.div`
-  width: 70%;
+  width: 50%;
   margin-left: 10px;
 `;
 
@@ -67,7 +67,7 @@ const Overview = styled.p`
   font-size: 12px;
   opacity: 0.7;
   line-height: 1.5;
-  width: 50%;
+  width: 70%;
 `;
 
 const Comment = styled.div`
@@ -87,6 +87,7 @@ const Comment = styled.div`
 
 const CommentTitle = styled.div`
   font-size: 18px;
+  margin: 15px 3px;
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
@@ -107,7 +108,6 @@ const DetailPresenter = ({ result, loading, error }) =>
         />
 
         <Data>
-          <LikeAndDislikePresenter />
           <Title>
             {result.original_title
               ? result.original_title
@@ -134,11 +134,13 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
-          <Comment>
-            <CommentTitle>Comment</CommentTitle>
-            <CommentPresenter />
-          </Comment>
         </Data>
+
+        <Comment>
+          <LikeAndDislikePresenter />
+          <CommentTitle>Comment</CommentTitle>
+          <CommentPresenter />
+        </Comment>
       </Content>
     </Container>
   );
