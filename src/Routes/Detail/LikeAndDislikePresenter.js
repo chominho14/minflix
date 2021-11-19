@@ -1,30 +1,53 @@
 import React, { useState } from "react";
-import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import { AiFillDislike, AiFillLike } from "react-icons/ai";
+import styled from "styled-components";
+
+const LikeAndDislikePresenters = styled.div`
+  display: flex;
+`;
+
+const LikeAndDisLikeSlash = styled.div`
+  text-align: center;
+  margin-top: 13px;
+`;
+
+const Like = styled.div`
+  margin: 5px;
+  cursor: pointer;
+`;
+
+const DisLike = styled.div`
+  margin: 5px;
+  cursor: pointer;
+`;
+
+//-------------------------------------------
 
 const LikeAndDislikePresenter = () => {
   const [likecounter, setLikeCounter] = useState(0);
   const [disLikecounter, setDisLikeCounter] = useState(0);
   const onLikeClick = () => {
-    setLikeCounter(likecounter + 1);
+    setLikeCounter((current) => current + 1);
   };
 
   const onDisLikeClick = () => {
-    setDisLikeCounter(disLikecounter + 1);
+    setDisLikeCounter((current) => current + 1);
   };
 
   return (
-    <>
-      <div>
+    <LikeAndDislikePresenters>
+      <Like onClick={onLikeClick}>
         좋아요
-        <AiOutlineLike onClick={onLikeClick} size="20" />
+        <AiFillLike size="20" />
         {likecounter}개
-      </div>
-      <div>
+      </Like>
+      <LikeAndDisLikeSlash>/</LikeAndDisLikeSlash>
+      <DisLike onClick={onDisLikeClick}>
         싫어요
-        <AiOutlineDislike onClick={onDisLikeClick} size="20" />
+        <AiFillDislike size="20" />
         {disLikecounter}개
-      </div>
-    </>
+      </DisLike>
+    </LikeAndDislikePresenters>
   );
 };
 
