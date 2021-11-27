@@ -36,9 +36,19 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
+const Logo = styled.h1`
+  width:150px;
+  height:70px;
+  margin-right:30px;
+  background:url(${props => props.bgImage});
+  background-size:cover;
+  background-position:center center;
+`;
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default withRouter(({ location: { pathname } }) => (
   <Header>
+    <Logo bgImage={require("../assets/logo.PNG").default}/>
     <List>
       <Item current={pathname === "/home"}>
         <SLink to="/">Movies</SLink>

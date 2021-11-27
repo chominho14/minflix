@@ -12,6 +12,7 @@ import Search from "Routes/Search";
 import Detail from "Routes/Detail";
 import Auth from "Routes/Auth";
 import Profile from "Routes/Profile";
+import Collection from "Routes/Collection";
 import { authService } from "fBase";
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -38,6 +39,7 @@ export default () => {
             <Route path="/movie/:id" component={Detail} />
             <Route path="/show/:id" component={Detail} />
             <Route path="/profile" component={Profile} />
+            <Route path="/collection/:id" component={Collection} />
             <Redirect from="*" to="/home" />
           </Switch>
         </>
