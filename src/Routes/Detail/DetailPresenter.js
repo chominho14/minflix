@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Loader from "Components/Loader";
 import CommentPresenter from "Routes/Detail/CommentPresenter";
 import LikeAndDislikePresenter from "Routes/Detail/LikeAndDislikePresenter";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -91,69 +91,66 @@ const CommentTitle = styled.div`
   margin: 15px 3px;
 `;
 
-
 const CollectionLink = styled.span`
-    font-size: 13px;
-    width: 20px;
-    height: 10px;
-    background-color: rgba(94, 79, 52,0.5);
-    color: #FFEFD5;
-    border: 5px;
-    box-sizing: border-box;
-    padding: 2px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    &:hover{
-        background-color: rgba(94, 79, 52,1);
-    }
+  font-size: 13px;
+  width: 20px;
+  height: 10px;
+  background-color: rgba(94, 79, 52, 0.5);
+  color: #ffefd5;
+  border: 5px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: rgba(94, 79, 52, 1);
+  }
 `;
 
 const ImdbBtn = styled.a`
-    all: unset;
-    width: 20px;
-    height: 10px;
-    background-color: rgba(94, 79, 52,0.8);
-    color: #FFEFD5;
-    border: 5px;
-    box-sizing: border-box;
-    padding: 2px 5px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    &:hover{
-        background-color: rgba(94, 79, 52,1);
-    }
+  all: unset;
+  width: 20px;
+  height: 10px;
+  background-color: rgba(94, 79, 52, 0.8);
+  color: #ffefd5;
+  border: 5px;
+  box-sizing: border-box;
+  padding: 2px 5px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: rgba(94, 79, 52, 1);
+  }
 `;
 
 const VideoContainer = styled.div`
-  width:90%;
-  padding 20px;
-  margin-top:200px;
-  background-color: rgba(255, 255, 255,0.4);
+  width: 90%;
+  padding: 20px;
+  margin-top: 200px;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
-  color : black;
+  color: black;
 `;
 
 const VideoItem = styled.div`
-  display : flex;
-  flex-direction : column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Video = styled.iframe`
-  width : 500px;
-  height : 300px;
+  width: 500px;
+  height: 300px;
   margin: 20px;
 `;
 
 const VideoName = styled.span`
-  margin-left : 30px;
-  font-size : 1.5em;
-  font-weight : bold;
+  margin-left: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
 `;
-
-
 
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
@@ -186,7 +183,7 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
             <Divider>▪</Divider>
             <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
+              {result.runtime ? result.runtime : result.episode_run_time} min
             </Item>
             <Divider>▪</Divider>
             <Item>
@@ -196,38 +193,45 @@ const DetailPresenter = ({ result, loading, error }) =>
                     ? genre.name
                     : `${genre.name} / `
                 )}
-                {result.imdb_id && (
-                        <>
-                            <Divider>•</Divider>
-                            <Item>
-                                <ImdbBtn href={`https://www.imdb.com/title/${result.imdb_id}/`} target="_blank" rel="noopener noreferrer">
-                                Imdb
-                                </ImdbBtn>
-                            </Item>
-                        </>
-                    )
-                    }
-                {result.belongs_to_collection ? 
-                    <>
-                    <Divider>•</Divider>
-                    <Link to={`/collection/${result.belongs_to_collection.id}`}>
-                        <CollectionLink>See Series</CollectionLink>
-                    </Link>    
-                    </> : ''          
-                    }
+              {result.imdb_id && (
+                <>
+                  <Divider>•</Divider>
+                  <Item>
+                    <ImdbBtn
+                      href={`https://www.imdb.com/title/${result.imdb_id}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Imdb
+                    </ImdbBtn>
+                  </Item>
+                </>
+              )}
+              {result.belongs_to_collection ? (
+                <>
+                  <Divider>•</Divider>
+                  <Link to={`/collection/${result.belongs_to_collection.id}`}>
+                    <CollectionLink>See Series</CollectionLink>
+                  </Link>
+                </>
+              ) : (
+                ""
+              )}
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
           {
             <VideoContainer>
-              {
-                result.videos.results && result.videos.results.length > 0 ?  
-                  <VideoItem key={result.videos.results[0].id}>
-                    <VideoName>{result.videos.results[0].name}</VideoName>
-                    <Video src={`https://www.youtube.com/embed/${result.videos.results[0].key}`} />                  
-                  </VideoItem>
-                : `YouTube Video가 없습니다.`
-              }
+              {result.videos.results && result.videos.results.length > 0 ? (
+                <VideoItem key={result.videos.results[0].id}>
+                  <VideoName>{result.videos.results[0].name}</VideoName>
+                  <Video
+                    src={`https://www.youtube.com/embed/${result.videos.results[0].key}`}
+                  />
+                </VideoItem>
+              ) : (
+                `YouTube Video가 없습니다.`
+              )}
             </VideoContainer>
           }
         </Data>

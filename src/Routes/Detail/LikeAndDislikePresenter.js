@@ -14,11 +14,13 @@ const LikeAndDisLikeSlash = styled.div`
 const Like = styled.div`
   margin: 5px;
   cursor: pointer;
+  font-weight: bold;
 `;
 
 const DisLike = styled.div`
   margin: 5px;
   cursor: pointer;
+  font-weight: bold;
 `;
 
 //-------------------------------------------
