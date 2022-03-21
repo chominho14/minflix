@@ -2,12 +2,16 @@
 
 ## 스크린
 
-- 홈-영화들이 보여질 거다
+- 로그인( 구글, 깃허브 로그인)
+- 네비게이션바 - 영화, TV프로그램, 검색, 프로필
+
+- 홈-영화들이 보인다,
 - 티비쇼 - 티비쇼들
 - 서치
-- 디테일(프로그램들을 클릭했을 시 나오는 것)
+- 디테일(프로그램들의 상세설명) - 댓글과 좋아요, 싫어요.
+- 시리즈 - 시리즈가 있는 영화는 시리즈별로 모아서 보여주는 페이지.
 
-## API 가져올 것
+## API
 
 - 1.
 - Now playing(Movie)
@@ -27,4 +31,3 @@
 - tabs inside of Mivie / show Details ( YT videos, Production Company & Countries)
 - Collections Link
 - collections Route
--
