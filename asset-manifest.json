@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/minflix/static/js/main.bf0ae1d6.chunk.js",
+    "main.js.map": "/minflix/static/js/main.bf0ae1d6.chunk.js.map",
+    "runtime-main.js": "/minflix/static/js/runtime-main.9bf763eb.js",
+    "runtime-main.js.map": "/minflix/static/js/runtime-main.9bf763eb.js.map",
+    "static/js/2.fe26e1a4.chunk.js": "/minflix/static/js/2.fe26e1a4.chunk.js",
+    "static/js/2.fe26e1a4.chunk.js.map": "/minflix/static/js/2.fe26e1a4.chunk.js.map",
+    "index.html": "/minflix/index.html",
+    "static/js/2.fe26e1a4.chunk.js.LICENSE.txt": "/minflix/static/js/2.fe26e1a4.chunk.js.LICENSE.txt",
+    "static/media/logo.PNG": "/minflix/static/media/logo.e0546f60.PNG",
+    "static/media/noPosterSmall.PNG": "/minflix/static/media/noPosterSmall.152320d4.PNG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9bf763eb.js",
+    "static/js/2.fe26e1a4.chunk.js",
+    "static/js/main.bf0ae1d6.chunk.js"
+  ]
+}
